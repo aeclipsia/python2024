@@ -11,3 +11,5 @@ if mes in fecha31:
     print("Tiene 31 días")
 elif mes in fecha30:
     print("Tiene 30 días")
+else:
+    print("Tiene 28 días")
