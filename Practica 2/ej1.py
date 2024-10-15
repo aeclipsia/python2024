@@ -1,5 +1,5 @@
 dinero = float(input("Dinero a retirar: "))
 
-multiplicador = (dinero // 1000) + 1
-
-print("%s %.2f %s" % ("Comisión: ",10*multiplicador," euros"))
+comision = (dinero // 100) + 10
+print("%s %.2f %s" % ("Dinero a retirar: ",dinero-comision," euros."))
+print("%s %.2f %s" % ("Comisión: ",comision," euros"))
