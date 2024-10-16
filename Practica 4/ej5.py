@@ -1,7 +1,7 @@
 def filtrar_palabras(lista,letras):
-    for i in range(len(lista)):
-        if len(lista[i])>=letras:
-            print(lista[i])
+    for i in lista:
+        if len(i)>=letras:
+            print(i)
             
 original=["En", "la", "granja", "la", "vaca", "pasea", "tranquila", "por", "el", "prado", "disfrutando", "del", "sol"]
 
