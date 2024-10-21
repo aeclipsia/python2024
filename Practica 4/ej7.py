@@ -1,3 +1,9 @@
+def inTuple(n,tupla):
+    for i in tupla:
+        if i[0]==n:
+            return True
+    return False
+
 nombres=list()
 nombresFound=list()
 while True:
@@ -6,21 +12,12 @@ while True:
         break;
     nombres.append(nombre)
 
-maximo=-1000
-
-for i in nombres:
-    buscar=i
-    
-    if i in nombresFound:
+for i in nombres:    
+    if inTuple(i, nombresFound):
         continue
     
-    nombresFound.append(i)
-    x=0
-
-    for j in nombres:
-        if buscar==j:
-            x+=1
-    print(buscar+": "+str(x))
+    x=nombres.count(i)
     
-    if maximo<x:
-        maximo=x
+    nombresFound.append((i,x))
+        
+print(nombresFound)
