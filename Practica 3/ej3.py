@@ -4,4 +4,4 @@ def escribirCentrado(t,c="="):
     print(" "*espacios+c*len(t))
     
 escribirCentrado("hola")
-escribirCentrado("lorem ipsum dolor sit amet, consectetur adipiscing elit")
+escribirCentrado("lorem ipsum dolor sit amet, consectetur adipiscing elit","*")
