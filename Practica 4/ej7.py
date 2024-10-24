@@ -6,10 +6,12 @@ def inTuple(n,tupla):
 
 nombres=list()
 nombresFound=list()
-while True:
+nombre="0"
+while nombre!="-1":
     nombre=input("Anota un nombre:\n=>")
     if nombre=="-1":
-        break;
+        print("programa terminada")
+        break
     nombres.append(nombre)
 
 for i in nombres:    

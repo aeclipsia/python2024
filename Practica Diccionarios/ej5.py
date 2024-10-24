@@ -1,7 +1,8 @@
 diccionario={}
 
 def definirDiccionario():
-    while True:
+    opD="Y"
+    while opD!="N" and opD!="n":
         es=input("Anota palabra en español:\n=>")
         if es in diccionario:
             print("Ya está en el diccionario")
@@ -11,12 +12,11 @@ def definirDiccionario():
         
         diccionario.update({es:en})
         
-        op=input("Quieres añadir más? Y/N\n")
-        if op=="N" or op=="n":
-            break
+        opD=input("Quieres añadir más? Y/N\n")
         
 def traducir():
-    while True:
+    opT="Y"
+    while opT!="N" and opT!="n":
         frase=input("Anota la frase o palabra que quieras traducir:\n=>")
         fraselist=frase.split()
         for x in fraselist:
@@ -25,16 +25,17 @@ def traducir():
                 frase=frase.replace(x,translated)
         print(frase)
         
-        op=input("Quieres seguir? Y/N\n")
-        if op=="N" or op=="n":
-            break
+        opT=input("Quieres seguir? Y/N\n")
 
-while True:
+op="0"
+while op!="3":
     op=input("Que operación desea hacer:\n1.Definir diccionario\n2.Traducir\n3.Salir\n=>")
     if op=="1":
         definirDiccionario()
         print(diccionario)
     elif op=="2":
         traducir()
+    elif op=="3":
+        print("programa terminada")
     else:
-        break
+        print("opción incorrecta")

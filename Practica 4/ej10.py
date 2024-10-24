@@ -7,21 +7,17 @@ from colorama import Fore
 colors=("R", "A", "Z", "V", "W", "B", "F")
 ficha=list()
 
-while True:
+while len(ficha)<5:
     x=random.choice(colors)
     
     if (ficha.count(x)<2):
         ficha.append(x)
     
-    if (len(ficha)>=5):
-        break
-    
 print(ficha)
 
 tries=6
-    
-
-while True:
+countCorrect=0
+while countCorrect!=5 and tries!=0:
     countCorrect=0
     
     print("Tienes "+str(tries)+" intentos")
@@ -54,7 +50,6 @@ while True:
     
     if countCorrect==5:
         print(Fore.WHITE+"Adivinaste!")
-        break
     
     if tries==0:
         print("No lo adivinaste, la ficha es: ", end="")
@@ -74,4 +69,3 @@ while True:
             elif i=="F":
                 print(Fore.MAGENTA+i, end="")
         print("\n")
-        break

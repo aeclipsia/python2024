@@ -1,11 +1,23 @@
 facturas={}
+
 cobrada=0
-pendiente=0
+
+def sumPendiente():
+    list_pendientes=[]
+    for i in facturas:
+        list_pendientes.append(facturas[i])
+    pendiente=sum(list_pendientes)
+    return pendiente
 
 def showFactura():
-    print("Cobrada: "+str(cobrada)+", Pendiente: "+str(pendiente))
+    print("Cobrada: "+str(cobrada)+", Pendiente: "+str(sumPendiente()))
 
-while True:
+
+op="0"
+while op!="3":
+    print(facturas)
+    showFactura()
+    
     op=input("Anota la operación:\n1.Añadir factura\n2.Pagar factura\n3.Terminar\n=>")
     if op == "1":
         numFac=input("Anota el número de factura:\n=>")
@@ -13,26 +25,19 @@ while True:
             coste=float(input("Anota el coste de la factura:\n=>"))
             facturas.update({numFac:coste})
             
-            pendiente+=facturas[numFac]
-            
         else:
             print("El número de factura ya está")
-            
-        showFactura()
-    if op=="2":
-        pendiente=0
+    elif op=="2":
         numFac=input("Anota el número de factura:\n=>")
         if numFac in facturas:
             
             cobrada+=facturas[numFac]
-            facturas.pop(numFac)
             
-            for p in facturas:
-                pendiente+=facturas[p]
+            facturas.pop(numFac)
             
         else:
             print("El número de factura no está")
-            
-        showFactura()
-    if op=="3":
-        break
+    elif op=="3":
+        print("programa terminada")
+    else:
+        print("opción incorrecta")

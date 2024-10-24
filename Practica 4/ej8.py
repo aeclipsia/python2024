@@ -1,9 +1,8 @@
 edadLista=list()
 
-while True:
+n=0
+while n!=-1:
     n=int(input("Anota la edad. Pon -1 para salir.\n=>"))
-    if n==-1:
-        break
     edadLista.append(n)
     
 edadTupla=tuple(edadLista)

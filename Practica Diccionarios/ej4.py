@@ -12,7 +12,8 @@ def checkLikes(g,l):
         return False
     return True
 
-while True:
+ope="Y"
+while ope!="N" and ope!="n":
     g=input("Añadir gusto\n=>")
     p=input("A quién?\n=>")
     
@@ -26,8 +27,6 @@ while True:
         diccionario_gustos.update({p:[g]})
     
     ope=input("Quieres añadir más? Y/N\n=>")
-    if ope=="N" or ope=="n":
-        break
             
 for i in diccionario_gustos:
     print("nombre"+i)

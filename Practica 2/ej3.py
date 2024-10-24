@@ -1,10 +1,9 @@
 
-while True:
+caracter="xx"
+while len(caracter)!=1:
     caracter = input("Anota un caracter: ")
     
-    if (len(caracter)==1):
-        break
-    else:
+    if (len(caracter)!=1):
         print("Anota sólo un caracter")
 
 #if (caracter>='a') & (caracter<='z'):
