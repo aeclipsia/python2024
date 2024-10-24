@@ -3,7 +3,6 @@ cadena=cadena.lower()
 palabras=cadena.split()
 
 frec={}
-
 for i in palabras:
     if i in frec:
         frec[i]+=1
