@@ -24,11 +24,11 @@ entradaCollection=entrada.split()
 
 print(entradaCollection)
 
-resultado=''
+resultado=['']
 
 for i in entradaCollection:
     for c,v in codigo.items():
         if i==v:
             print(codigo[c])
-            resultado.append(codigo[c])
+            resultado.append(c)
 print(''.join(resultado))
