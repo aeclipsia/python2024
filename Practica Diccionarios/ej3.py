@@ -29,6 +29,6 @@ resultado=['']
 for i in entradaCollection:
     for c,v in codigo.items():
         if i==v:
-            print(codigo[c])
+            # print(codigo[c])
             resultado.append(c)
 print(''.join(resultado))

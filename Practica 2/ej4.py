@@ -3,7 +3,8 @@ import random
 
 x = random.randint(1,10)
 
-while True:
+y=11
+while x!=y:
     y = int(input("Adivina mi número!\t"))
     
     if (y<x):
