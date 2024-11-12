@@ -1,19 +1,30 @@
 import uservalidate.usertest as userVal
 import uservalidate.passtest as passVal
 
-username=input("Usuario: ")
+userData={}
 
-
-valid , message=userVal.validateUser(username)
-
-if not valid:
-    print(message)
-else:
+username=input("Anota usuario: ")
+while username!="*":
+    while not userVal.validateUser(username) and username!="*" and username not in userData:
+        if username in userData:
+            print("Usuario ya registrado")
+        
+        username=input("Anota usuario: ")
+    
+    if username=="*":
+        break
+    
     print("Usuario correcto")
     
-password=input("Contraseña: ")
-
-if passVal.validatePass(password):
-   print("Contraseña válida") 
-else:
-    print("La contraseña elegida no es segura")
+    password=input("Anota contraseña: ")
+    
+    while not passVal.validatePass(password):
+        password=input("Anota contraseña: ")
+        
+    print("Contraseña válida")
+    
+    userData.update({username:password})
+    
+    username=input("Anota usuario: ")
+    
+print(userData)

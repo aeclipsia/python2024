@@ -1,26 +1,24 @@
 def validatePass(x):
     
-    if len(x)<8:
+    if len(x)<8 or " " in x:
         return False
     
-    lower=x.islower() #tiene que ser False
-    caps=x.isupper()
-    nums=x.isdigit()
-    symbols=x.isalnum()
+    tieneMayus=False;
+    tieneMinus=False;
+    tieneNums=False;
+    tieneEspecial=False;
     
-    space=False
-    
-    for i in x:
-        if i.isspace():
-            space=True
+    for char in x:
+        if char.isupper():
+            tieneMayus=True
+        elif char.islower():
+            tieneMinus=True
+        elif char.isdigit():
+            tieneNums=True
+        elif not char.isalnum():
+            tieneEspecial=True
             
-    # print(lower)
-    # print(caps)
-    # print(nums)
-    # print(symbols)
-    # print(space)
-            
-    if ~lower and ~caps and ~nums and ~symbols and space:
-        return True
-    
+        if tieneMayus and tieneMinus and tieneNums and tieneEspecial:
+            return True
+        
     return False
