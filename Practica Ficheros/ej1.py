@@ -15,10 +15,6 @@ while nombre!="*":
         print(nombre,":",telefono)
         listaTel.update({nombre:telefono})
     nombre=input("Anota su nombre (* para salir)\n=>")
-    
-# file=open("listin.txt","w+")
-# file.writelines(listaTel)
-# file.close()
 
 with open("Practica Ficheros/Ficheros/listin.txt","w+") as file:
     for i in listaTel:
