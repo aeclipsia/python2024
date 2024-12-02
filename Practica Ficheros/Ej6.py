@@ -61,12 +61,10 @@ def listaAprobadosYSuspensos(listaDiccionario):
     
     return listaSuspensos,listaAprobados
 
-lista_alumnos = devolverListaDiccionario("EJERCICIOS/PRACTICA8/data/calificaciones.csv")
+lista_alumnos = devolverListaDiccionario("Practica Ficheros/Ficheros/calificaciones.csv")
 
-# Calcular las notas finales
 lista_alumnos_con_notas = añadirNotaFinal(lista_alumnos)
 
-# Clasificar a los alumnos en aprobados y suspensos
 suspensos, aprobados = listaAprobadosYSuspensos(lista_alumnos_con_notas)
 
 print("Alumnos aprobados:")

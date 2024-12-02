@@ -16,8 +16,6 @@ def existeCorreo(correo):
                     print(i[1]+" ya existe")
                     return True
             return False
-            
-
 
 def addToFile(linea,correo):
     with open("Practica Ficheros/Ficheros/AlumnosFP.csv", "a") as fichero:
@@ -27,7 +25,6 @@ def addToFile(linea,correo):
 
 with open("Practica Ficheros/Ficheros/ListadoAlumnosFP.csv", "r",encoding="latin-1") as fichero:
     doc = list(csv.reader(fichero, delimiter=";"))
-    #print(doc)
     
 for i in doc[1:]:
     correo1=correo1apellido(i)
@@ -37,6 +34,3 @@ for i in doc[1:]:
     else:
         addToFile(i,correo1)
         
-
-    
-    
