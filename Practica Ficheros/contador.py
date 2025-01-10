@@ -20,7 +20,7 @@ def count(inc=0,dec=0):
         file.write("0")
         file.close
         
-    if inc==0 and dec==0:
+    if (inc==0 and dec==0) or (inc!=0 and inc!=0):
         empty=True
         
         file=open(route,"r+")
